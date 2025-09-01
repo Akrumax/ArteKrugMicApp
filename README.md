@@ -33,3 +33,6 @@
 <проект>\bin\Debug\net8.0\models\vosk-model-small-en-us-0.15\
 
 Можно пробовать запускать.
+
+Результат:
+![alt text](https://raw.githubusercontent.com/Akrumax/ArteKrugMicApp/refs/heads/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0.png)
