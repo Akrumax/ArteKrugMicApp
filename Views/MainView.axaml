@@ -1,0 +1,37 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:ArteKrugMicApp.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ArteKrugMicApp.Views.MainView"
+             x:DataType="vm:MainViewModel">
+	<Design.DataContext>
+		<vm:MainViewModel/>
+	</Design.DataContext>
+
+	<StackPanel Margin="12" Spacing="8">
+		<TextBlock Text="Выберите микрофон:"/>
+		<ComboBox ItemsSource="{Binding Microphones}" SelectedItem="{Binding SelectedMicrophone}" Width="420"/>
+
+		<StackPanel Orientation="Horizontal" Spacing="8" Margin="0,8,0,0">
+			<ComboBox ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" Width="180"/>
+			<ComboBox ItemsSource="{Binding Genders}" SelectedItem="{Binding SelectedGender}" Width="180"/>
+		</StackPanel>
+
+		<StackPanel Orientation="Horizontal" Spacing="12" Margin="0,8,0,0">
+			<Button Content="Открыть папку espeak" Command="{Binding OpenEspeakFolderCommand}" />
+			<Button Content="Открыть папку моделей" Command="{Binding OpenModelsFolderCommand}" />
+		</StackPanel>
+
+		<CheckBox Content="Включить преобразование" IsChecked="{Binding IsEnabled}" Margin="0,8,0,0"/>
+		<TextBlock Text="{Binding Status}" TextWrapping="Wrap" />
+
+		<TextBlock Text="Распознанный текст (реальное время):" Margin="0,6,0,0"/>
+		<TextBox Text="{Binding RecognizedText}"
+				 IsReadOnly="True"
+				 AcceptsReturn="True"
+				 Height="120" Width="480"
+				 ScrollViewer.VerticalScrollBarVisibility="Auto" />
+	</StackPanel>
+</UserControl>
